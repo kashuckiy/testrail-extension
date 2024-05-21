@@ -1,0 +1,28 @@
+{
+    "name": "TestRail Extension",
+    "description": "Extensions for automatically controlling the height of the text input field",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+      "default_icon": "images/32.png"
+    },
+    "icons": {
+      "16": "images/16.png",
+      "32": "images/32.png",
+      "48": "images/48.png",
+      "128": "images/128.png"
+  },
+    "content_scripts": [
+      {
+        "js": ["js/content.js"],
+        "matches": [
+          "https://testrail.atlas-iac.org/index.php?/cases/edit/*", "https://testrail.atlas-iac.org/index.php?/cases/add/*"
+        ],
+        "run_at": "document_end"
+      }
+    ],
+    "permissions": ["scripting"],
+    "host_permissions": [
+      "https://testrail.atlas-iac.org/index.php?/cases/edit/*", "https://testrail.atlas-iac.org/index.php?/cases/add/*"
+  ]
+  }
